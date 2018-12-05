@@ -100,7 +100,8 @@ static inline int getContainerId()    {
     int ret = -1;
     char value[PROP_VALUE_MAX];
 	    
-    ret = __system_property_get("ro.boot.container.id", value);
+//    ret = __system_property_get("ro.boot.container.id", value);
+      ret = property_get_int32("ro.container.id",0);  //modify by moto
     if (ret <= 0)    { // 0 for undefined
         return 0;
     } else    {    
